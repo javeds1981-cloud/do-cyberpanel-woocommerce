@@ -1,36 +1,66 @@
-# do-cyberpanel-woocommerce
-Deploy WooCommerce on DigitalOcean Droplet using CyberPanel (OpenLiteSpeed).
-# WooCommerce Hosting on DigitalOcean with CyberPanel
+DigitalOcean WooCommerce Deployment with CyberPanel, Cloudflare & Firewall Hardening
 
-## Overview
-This project demonstrates how to deploy a production-ready WooCommerce store 
-on a DigitalOcean droplet using CyberPanel (OpenLiteSpeed).
+# Project Overview
 
-## Architecture
-- DigitalOcean Droplet (Ubuntu 22.04, 8vCPU/16GB RAM)
-- CyberPanel with OpenLiteSpeed
-- MariaDB for WooCommerce
-- SSL with Let's Encrypt
-- Optional: Cloudflare CDN + WAF
+This project demonstrates a secure and production-ready WooCommerce hosting environment on DigitalOcean Droplet using CyberPanel (OpenLiteSpeed) and Cloudflare.
 
-## Steps
-1. Create Droplet on DigitalOcean
-2. Install CyberPanel
-3. Configure SSL, Email, Backups
-4. Install WordPress + WooCommerce
-5. Optimize performance with cache + Cloudflare
+It covers:
 
-## Benefits
-- Low-cost, production-ready eCommerce
-- Automated SSL + backup
-- Scalable with DigitalOcean
+WordPress & WooCommerce deployment on CyberPanel droplet
 
-## Security & Backup Configuration
+SSL integration with Let’s Encrypt + Cloudflare Universal SSL
 
-- **SSL/TLS**: Configured via CyberPanel with Let's Encrypt (auto-renew every 90 days).  
-- **Cloudflare SSL/TLS & WAF**: End-to-end encryption with Cloudflare Universal SSL + Web Application Firewall rules.  
-- **Backups**: 
-  - Application-level backups from CyberPanel (daily).  
-  - Droplet snapshots from DigitalOcean (weekly + on-demand).  
-  - Option for hourly snapshot for critical workloads.  
-- **Firewall Rules**: Configured DigitalOcean firewall to restrict access on ports 80/443 to whitelisted IP ranges. SSH restricted to admin IPs only.  
+Backup strategy (CyberPanel, DigitalOcean snapshots)
+
+Advanced firewall hardening (restrictive inbound/outbound rules)
+
+# Architecture
+
+Platform: DigitalOcean Droplet (Ubuntu)
+
+Web Server: CyberPanel (OpenLiteSpeed)
+
+Database: MariaDB (auto-installed by CyberPanel)
+
+SSL: Let’s Encrypt (90 days) + Cloudflare SSL
+
+Firewall: DigitalOcean Cloud Firewall
+
+Backups: CyberPanel full site backups + DO hourly snapshots
+
+# Firewall Configuration
+
+Inbound Rules
+
+SSH (22/tcp) – Restricted (Admin IP only)
+
+HTTP (80/tcp) – Allowed only from trusted IPs (DigitalOcean + Cloudflare ranges)
+
+HTTPS (443/tcp) – Allowed only from trusted IPs (DigitalOcean + Cloudflare ranges)
+
+CyberPanel Management (7080/8090) – Restricted to specific IP ranges
+
+Outbound Rules
+
+ICMP – Allowed (All IPv4/IPv6)
+
+All TCP – Allowed (necessary for updates & package downloads)
+
+
+# Security Hardening
+
+Enforced end-to-end encryption (Let’s Encrypt + Cloudflare SSL).
+
+Disabled public SSH, enabled IP-restricted access only.
+
+Blocked all unused ports by default.
+
+Restricted CyberPanel ports (7080/8090) to known IPs only.
+
+# Backup Strategy
+
+Application Backup – CyberPanel scheduled backups (daily/weekly).
+
+Infrastructure Backup – DigitalOcean droplet snapshots (hourly/daily).
+
+Cloudflare Caching – Protects against downtime and improves performance.
