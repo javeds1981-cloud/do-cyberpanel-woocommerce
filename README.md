@@ -32,7 +32,7 @@ This setup is suitable for **small to medium e-commerce businesses** looking for
 - Outbound rules restricted to essential traffic (updates, DNS).  
 
 📸 Firewall Rules:  
-![Firewall Rules](./screenshots/do-firewall.png)
+![Firewall Rules](./screenshots/Firewall-configuration.png)
 
 ### 🔹 Cloudflare Security
 - Applied **Custom Security Rules**:
@@ -41,7 +41,7 @@ This setup is suitable for **small to medium e-commerce businesses** looking for
 - Enabled **DDoS protection & caching** for resilience  
 
 📸 Cloudflare Security Rules:  
-![Cloudflare Security Rules](./screenshots/cloudflare-security.png)
+![Cloudflare Security Rules](./screenshots/cloudflare security rules.png)
 
 ---
 
@@ -52,7 +52,7 @@ This setup is suitable for **small to medium e-commerce businesses** looking for
 - **Cloudflare Caching** as additional safeguard against downtime  
 
 📸 CyberPanel Backup:  
-![Backup Dashboard](./screenshots/cyberpanel-backup.png)
+![Backup Dashboard](./screenshots/cyberpanel dashboard.png)
 
 ---
 
