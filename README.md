@@ -41,7 +41,7 @@ This setup is suitable for **small to medium e-commerce businesses** looking for
 - Enabled **DDoS protection & caching** for resilience  
 
 📸 Cloudflare Security Rules:  
-![Cloudflare Security Rules](./screenshots/cloudflare security rules.png)
+![Cloudflare Security Rules](./screenshots/security-rules-cloudflare.png)
 
 ---
 
@@ -51,8 +51,8 @@ This setup is suitable for **small to medium e-commerce businesses** looking for
 - **Infrastructure-Level Backups** via DigitalOcean Snapshots (daily/hourly)  
 - **Cloudflare Caching** as additional safeguard against downtime  
 
-📸 CyberPanel Backup:  
-![Backup Dashboard](./screenshots/cyberpanel dashboard.png)
+📸 CyberPanel:  
+![Dashboard](./screenshots/cyberpanel-dashboard.png)
 
 ---
 
