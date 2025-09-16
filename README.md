@@ -7,7 +7,7 @@ This project demonstrates how to deploy a production-ready WooCommerce store
 on a DigitalOcean droplet using CyberPanel (OpenLiteSpeed).
 
 ## Architecture
-- DigitalOcean Droplet (Ubuntu 22.04, 2vCPU/4GB RAM)
+- DigitalOcean Droplet (Ubuntu 22.04, 8vCPU/16GB RAM)
 - CyberPanel with OpenLiteSpeed
 - MariaDB for WooCommerce
 - SSL with Let's Encrypt
