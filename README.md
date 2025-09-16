@@ -1,66 +1,80 @@
-DigitalOcean WooCommerce Deployment with CyberPanel, Cloudflare & Firewall Hardening
+# 🚀 Secure WooCommerce Deployment on DigitalOcean with CyberPanel & Cloudflare
 
-# Project Overview
+## 📌 Project Overview
+This project demonstrates the deployment of a **WooCommerce e-commerce site** on a **DigitalOcean Droplet** using **CyberPanel (OpenLiteSpeed)**.  
+The focus is on **security, encryption, and data protection** through Cloudflare, strict firewall rules, and multi-layer backup strategies.  
 
-This project demonstrates a secure and production-ready WooCommerce hosting environment on DigitalOcean Droplet using CyberPanel (OpenLiteSpeed) and Cloudflare.
+This setup is suitable for **small to medium e-commerce businesses** looking for cost-effective yet secure hosting.
 
-It covers:
+---
 
-WordPress & WooCommerce deployment on CyberPanel droplet
+## 🏗️ Architecture
+- **Platform**: DigitalOcean Droplet (Ubuntu)  
+- **Control Panel & Web Server**: CyberPanel (OpenLiteSpeed)  
+- **Database**: MariaDB (installed via CyberPanel)  
+- **SSL/TLS**: Let’s Encrypt (90-day auto renewal) + Cloudflare Universal SSL  
+- **CDN & Security**: Cloudflare (DNS, CDN, WAF, DDoS Protection)  
+- **Backups**: CyberPanel scheduled backups + DigitalOcean Snapshots  
 
-SSL integration with Let’s Encrypt + Cloudflare Universal SSL
+---
 
-Backup strategy (CyberPanel, DigitalOcean snapshots)
+## 🔐 Security Configuration
 
-Advanced firewall hardening (restrictive inbound/outbound rules)
+### 🔹 SSL & Certificates
+- Configured **Let’s Encrypt SSL** from CyberPanel dashboard.  
+- Enabled **Cloudflare SSL/TLS** for end-to-end encryption.  
 
-# Architecture
+### 🔹 Firewall (DigitalOcean)
+- Restricted inbound traffic to only essential ports:
+  - **22 (SSH)** → Admin IP only  
+  - **80 (HTTP) & 443 (HTTPS)** → Allowed via DigitalOcean/Cloudflare ranges only  
+  - **7080 & 8090** (CyberPanel) → Restricted to specific IPs  
+- Outbound rules restricted to essential traffic (updates, DNS).  
 
-Platform: DigitalOcean Droplet (Ubuntu)
+📸 Firewall Rules:  
+![Firewall Rules](./screenshots/do-firewall.png)
 
-Web Server: CyberPanel (OpenLiteSpeed)
+### 🔹 Cloudflare Security
+- Applied **Custom Security Rules**:
+  - Block unknown/untrusted ASNs  
+  - JS Challenge for suspicious requests  
+- Enabled **DDoS protection & caching** for resilience  
 
-Database: MariaDB (auto-installed by CyberPanel)
+📸 Cloudflare Security Rules:  
+![Cloudflare Security Rules](./screenshots/cloudflare-security.png)
 
-SSL: Let’s Encrypt (90 days) + Cloudflare SSL
+---
 
-Firewall: DigitalOcean Cloud Firewall
+## 💾 Backup & Recovery
 
-Backups: CyberPanel full site backups + DO hourly snapshots
+- **Application-Level Backups** via CyberPanel (daily/weekly schedule)  
+- **Infrastructure-Level Backups** via DigitalOcean Snapshots (daily/hourly)  
+- **Cloudflare Caching** as additional safeguard against downtime  
 
-# Firewall Configuration
+📸 CyberPanel Backup:  
+![Backup Dashboard](./screenshots/cyberpanel-backup.png)
 
-Inbound Rules
+---
 
-SSH (22/tcp) – Restricted (Admin IP only)
+## ✅ Key Outcomes
 
-HTTP (80/tcp) – Allowed only from trusted IPs (DigitalOcean + Cloudflare ranges)
+- **Secure E-commerce Hosting** with end-to-end encryption  
+- **Firewall Hardening** minimizing attack surface  
+- **Layered Backups** protecting application + infrastructure  
+- **Resilient Performance** using Cloudflare CDN + caching  
+- **Practical, real-world deployment** for DigitalOcean & CyberPanel  
 
-HTTPS (443/tcp) – Allowed only from trusted IPs (DigitalOcean + Cloudflare ranges)
+---
 
-CyberPanel Management (7080/8090) – Restricted to specific IP ranges
+## 📚 Future Enhancements
 
-Outbound Rules
+This is **Phase 1 (Single-Server Secure Setup)**.  
+Next phases will include:  
 
-ICMP – Allowed (All IPv4/IPv6)
+- **High Availability (HA)** → Multi-droplet with load balancing & DB replication  
+- **Disaster Recovery (DR)** → Cross-region snapshots & automated restore pipelines  
 
-All TCP – Allowed (necessary for updates & package downloads)
+---
 
-
-# Security Hardening
-
-Enforced end-to-end encryption (Let’s Encrypt + Cloudflare SSL).
-
-Disabled public SSH, enabled IP-restricted access only.
-
-Blocked all unused ports by default.
-
-Restricted CyberPanel ports (7080/8090) to known IPs only.
-
-# Backup Strategy
-
-Application Backup – CyberPanel scheduled backups (daily/weekly).
-
-Infrastructure Backup – DigitalOcean droplet snapshots (hourly/daily).
-
-Cloudflare Caching – Protects against downtime and improves performance.
+## 🔖 Topics & Keywords
+WooCommerce • CyberPanel • DigitalOcean • Cloudflare • SSL/TLS • Firewall • Backup • Security • CDN • DevOps • E-commerce Hosting
