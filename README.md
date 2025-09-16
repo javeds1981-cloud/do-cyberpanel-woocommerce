@@ -24,3 +24,13 @@ on a DigitalOcean droplet using CyberPanel (OpenLiteSpeed).
 - Low-cost, production-ready eCommerce
 - Automated SSL + backup
 - Scalable with DigitalOcean
+
+## Security & Backup Configuration
+
+- **SSL/TLS**: Configured via CyberPanel with Let's Encrypt (auto-renew every 90 days).  
+- **Cloudflare SSL/TLS & WAF**: End-to-end encryption with Cloudflare Universal SSL + Web Application Firewall rules.  
+- **Backups**: 
+  - Application-level backups from CyberPanel (daily).  
+  - Droplet snapshots from DigitalOcean (weekly + on-demand).  
+  - Option for hourly snapshot for critical workloads.  
+- **Firewall Rules**: Configured DigitalOcean firewall to restrict access on ports 80/443 to whitelisted IP ranges. SSH restricted to admin IPs only.  
